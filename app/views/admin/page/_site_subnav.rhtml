@@ -17,7 +17,11 @@
 <div id="sites">
   <% Site.find(:all).each do |site| %>
     <% name = (@site == site) ? "<strong>#{site.name}</strong>" : site.name -%>
-    <%= link_to name, page_index_path(:root => site.homepage) %>
+    <%= link_to name, page_index_path(
+                        :root => site.homepage,
+                        :host => site.base_domain,
+                        :only_path => false
+                      ) %>
   <% end %>
 </div>
 

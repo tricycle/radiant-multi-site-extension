@@ -50,3 +50,14 @@ You can also scope a route to multiple sites with an array:
 
 Thanks to Digital Pulp, Inc. for funding the initial development of this
 extension as part of the Redken.com project.
+
+== Changelog
+
+2008/12/09
+Made site selector links go to that domain, not current domain.
+(makes page preview extension work with multisite). If all your
+domains share a common suffix, set it in your controller to not
+have to log in each time you go to a new site. 
+e.g. (in production.rb)
+  ActionController::Base.session_options[:session_domain] = '.mysite.com' 
+- Glenn Murray @ tricycledevelopments.com
